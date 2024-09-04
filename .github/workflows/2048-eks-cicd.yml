@@ -51,10 +51,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: configure kubectl 
-        uses: azure/k8s-set-context@v1 
-        with: 
-          kubeconfig: ${{ secrets.KUBECONFIG }}
+      - name: Update kubeconfig for EKS
+        run: |
+          aws eks update-kubeconfig --name my-demo-cluster --kubeconfig ./kubeconfig.yml
+          echo "KUBECONFIG=$(pwd)/kubeconfig.yml" >> $GITHUB_ENV
 
       - name: deploy to eks 
         run: |
