@@ -58,9 +58,9 @@ jobs:
 
       - name: deploy to eks 
         run: |
-          kubectl apply -f NameSpace/ -n epquito-2048
+          kubectl apply -f NameSpace/ 
 
       - name: deploy to eks 
         run: |
-          kubectl apply -f 2048_dep/ -n epquito-2048
+          kubectl apply -f 2048_dep/ 
 
