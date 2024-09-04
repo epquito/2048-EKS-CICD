@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: 2048-dep
-        image: epquito/epquito-2048:latest
+        image: epquito/2048:latest
         resources:
           limits:
             memory: "128Mi"
